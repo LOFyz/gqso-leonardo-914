@@ -23,8 +23,8 @@ public class bankAccountCore {
     return balance;
   }
 
-  void draftIsValid(double value) {
-
+  boolean draftIsValid(double value) {
+    return false;
   }
 
   double checkBalance() {

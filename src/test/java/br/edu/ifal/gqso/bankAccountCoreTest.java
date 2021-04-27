@@ -33,5 +33,6 @@ public class bankAccountCoreTest {
 
   @Test
   void testDraftIsValid() {
+    assertEquals(true, account.draftIsValid(10));
   }
 }
