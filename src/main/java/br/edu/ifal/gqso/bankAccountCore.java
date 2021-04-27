@@ -1,7 +1,7 @@
 package br.edu.ifal.gqso;
 
 public class bankAccountCore {
-  double balance = 1000;
+  double balance = 0;
 
   double deposit(double value) {
     if (depositIsValid(value)) {
@@ -19,11 +19,19 @@ public class bankAccountCore {
     return false;
   }
 
-  double draft(double value) {
+  double draft(double value) throws Exception {
+    if(draftIsValid(value)){
+      System.out.println("O saldo atual foi de: " + balance + " para " + (balance -= value));
+    }else{
+      System.out.println("Não foi possivel realizar esse saque.");
+    }
     return balance;
   }
 
   boolean draftIsValid(double value) throws Exception {
+    if(value<=0){
+      return false;
+    }
     if(value>balance){
       throw new Exception("SaldoInsuficiente");
     }

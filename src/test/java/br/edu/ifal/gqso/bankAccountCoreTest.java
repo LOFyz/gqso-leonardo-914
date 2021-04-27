@@ -11,6 +11,7 @@ public class bankAccountCoreTest {
   @BeforeEach
   public void setUp() {
     this.account = new bankAccountCore();
+    account.balance=1000;
   }
 
   @Test
@@ -36,5 +37,16 @@ public class bankAccountCoreTest {
     assertEquals(true, account.draftIsValid(10));
     assertEquals(true, account.draftIsValid(1000));
     assertEquals(false, account.draftIsValid(10000));
+  }
+  
+  @Test
+  void testDraft() throws Exception {
+    assertEquals(990, account.draft(10));
+    assertEquals(890, account.draft(100));
+    assertEquals(0, account.draft(890));
+    assertEquals(0, account.draft(0));
+    assertEquals(0, account.draft(-1));
+    assertEquals(0, account.draft(1));
+    assertEquals(0, account.draft(-1));
   }
 }
