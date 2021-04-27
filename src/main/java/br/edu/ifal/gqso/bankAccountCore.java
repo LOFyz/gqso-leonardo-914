@@ -3,16 +3,25 @@ package br.edu.ifal.gqso;
 public class bankAccountCore {
   double balance;
 
-  void deposit (double value){
-    
+  double deposit (double value){
+    System.out.println("O saldo atual foi de: "+balance+" para "+(balance+=value));
+    return balance+=value;
   }
-  
-  void draft (double value){
+
+  boolean depositIsValid(double value) {
+    if (value > 0) {
+      deposit(value);
+      return true;
+    }
+    return false;
+  }
+
+  void draftIsValid(double value) {
 
   }
-  
-  double checkBalance (){
+
+  double checkBalance() {
     return balance;
   }
-  
+
 }
