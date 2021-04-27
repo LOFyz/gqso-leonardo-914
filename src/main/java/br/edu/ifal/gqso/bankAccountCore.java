@@ -1,11 +1,11 @@
 package br.edu.ifal.gqso;
 
 public class bankAccountCore {
-  double balance;
+  double balance=0;
 
   double deposit (double value){
     System.out.println("O saldo atual foi de: "+balance+" para "+(balance+=value));
-    return balance+=value;
+    return balance;
   }
 
   boolean depositIsValid(double value) {

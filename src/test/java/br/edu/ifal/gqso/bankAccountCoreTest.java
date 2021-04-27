@@ -16,8 +16,8 @@ public class bankAccountCoreTest {
   @Test
   void testDeposit(){
     assertEquals(100, account.deposit(100));
-    assertEquals(200, account.deposit(200));
-    assertEquals(29, account.deposit(29));
+    assertEquals(300, account.deposit(200));
+    assertEquals(329, account.deposit(29));
   }
 
   @Test
