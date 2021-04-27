@@ -19,12 +19,16 @@ public class bankAccountCoreTest {
     assertEquals(1300, account.deposit(200));
     assertEquals(1329, account.deposit(29));
     assertEquals(1329, account.deposit(0));
+    assertEquals(1329, account.deposit(-29));
   }
 
   @Test
   void testDepositIsValid() {
     assertEquals(true, account.depositIsValid(1));
     assertEquals(true, account.depositIsValid(29));
+    assertEquals(false, account.depositIsValid(0));
+    assertEquals(false, account.depositIsValid(-29));
+    assertEquals(false, account.depositIsValid(-1));
   }
 
   @Test
