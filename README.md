@@ -1,1 +1,0 @@
-# gqso-leonardo-914
