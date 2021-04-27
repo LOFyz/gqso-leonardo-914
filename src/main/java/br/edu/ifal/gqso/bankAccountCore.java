@@ -23,7 +23,13 @@ public class bankAccountCore {
     return balance;
   }
 
-  boolean draftIsValid(double value) {
+  boolean draftIsValid(double value) throws Exception {
+    if(value>balance){
+      throw new Exception("SaldoInsuficiente");
+    }
+    if(value<=balance){
+      return true;
+    }
     return false;
   }
 

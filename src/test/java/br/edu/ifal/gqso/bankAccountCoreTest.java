@@ -32,7 +32,9 @@ public class bankAccountCoreTest {
   }
 
   @Test
-  void testDraftIsValid() {
+  void testDraftIsValid() throws Exception {
     assertEquals(true, account.draftIsValid(10));
+    assertEquals(true, account.draftIsValid(1000));
+    assertEquals(false, account.draftIsValid(10000));
   }
 }
