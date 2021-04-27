@@ -32,6 +32,8 @@ public class bankAccountCoreTest {
     assertEquals(false, account.depositIsValid(-1));
   }
 
+  // A previsão desse teste é que o ultimo lançara a excessão.
+  
   @Test
   void testDraftIsValid() throws Exception {
     assertEquals(true, account.draftIsValid(10));
@@ -39,6 +41,11 @@ public class bankAccountCoreTest {
     assertEquals(false, account.draftIsValid(10000));
   }
   
+  // A previsão para essa função de teste é de que o ultimo
+  // não será printado, pois a excessão será lançada antes dele
+  // tendo assim apenas dois retornos de: 
+  // "Não foi possivel realizar esse saque."
+
   @Test
   void testDraft() throws Exception {
     assertEquals(990, account.draft(10));
