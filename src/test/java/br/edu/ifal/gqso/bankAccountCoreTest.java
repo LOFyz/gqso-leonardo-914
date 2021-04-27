@@ -15,9 +15,10 @@ public class bankAccountCoreTest {
 
   @Test
   void testDeposit(){
-    assertEquals(100, account.deposit(100));
-    assertEquals(300, account.deposit(200));
-    assertEquals(329, account.deposit(29));
+    assertEquals(1100, account.deposit(100));
+    assertEquals(1300, account.deposit(200));
+    assertEquals(1329, account.deposit(29));
+    assertEquals(1329, account.deposit(0));
   }
 
   @Test
